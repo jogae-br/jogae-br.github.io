@@ -219,6 +219,8 @@
              background: rgba(15,19,28,.8); border: 1px dashed rgba(255,200,61,.5); color: var(--muted); }
   .qr-soon b { display: block; font: 800 22px Saira, sans-serif; color: var(--gold); margin-bottom: 6px; }
   .qr-cap { color: var(--gold); font-weight: 700; margin-top: 14px; }
+  .qr-badge { display: inline-block; margin-bottom: 12px; padding: 5px 14px; border-radius: 999px; background: var(--sky);
+              color: var(--ink); font: 800 12px Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
   .copy-pix { margin-top: 14px; }
   .copy-pix.ok { background: var(--green); color: var(--ink); border-color: var(--green); }
   .pix-key { color: var(--dim); font-size: 13px; margin-top: 12px; line-height: 1.5; }
@@ -490,13 +492,15 @@
           <h2>Feito de graça, <span class="gold-text">para quem tem PC simples</span></h2>
           <p class="lead" style="margin-top:18px">Se o Jogaê te ajudou a achar um jogo para se divertir, considere apoiar com qualquer valor.
             Cada apoio mantém o Jogaê vivo e com novidades.</p>
-          <ul class="checks gold"><li>Aponte a câmera do celular para o QR Code</li><li>Escolha o valor e deixe uma mensagem, se quiser</li><li>Pague com Pix pelo app do seu banco</li></ul>
+          <ul class="checks gold"><li>Abra a <strong>câmera</strong> do celular (não o app do banco) e aponte para o QR Code</li><li>Toque no link: abre a página de apoio do Jogaê</li><li>Escolha o valor e aí pague o Pix que aparecer, no app do seu banco</li></ul>
           <p class="pix-mobile">Está no celular? Toque em <strong>Abrir página de apoio</strong>. O pagamento é feito pela LivePix, com segurança.</p>
           
         </div>
         <div class="qr-box">
+          <span class="qr-badge">QR da página de apoio</span>
           <img class="qr" src="img/apoio.png" alt="QR Code da página de apoio do Jogaê" width="250" height="250">
-          <p class="qr-cap">Apoie via Pix · qualquer valor</p>
+          <p class="qr-cap">Leia com a câmera do celular</p>
+          <p class="pix-key" style="margin-top:4px">O Pix aparece depois, na página de apoio</p>
           <a class="btn btn-ghost btn-small copy-pix" href="https://livepix.gg/vndante" target="_blank" rel="noopener">Abrir página de apoio</a>
           <p class="pix-key">livepix.gg/vndante</p>
         </div>
