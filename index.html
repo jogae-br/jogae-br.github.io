@@ -307,7 +307,7 @@
         Com cara de videogame: tela cheia, música e dá para jogar no controle.</p>
       <div class="cta">
         <a class="btn btn-primary js-download" href="#instalar"><span class="glyph">A</span>
-          <span>Baixar grátis<span class="sub">Windows 10 e 11 · 38 MB</span></span></a>
+          <span>Baixar grátis<span class="sub">Windows 10 e 11 · instalador de 27 MB</span></span></a>
         <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
       </div>
       <div class="trust"><span>Sem propaganda</span><span>Sem cadastro</span><span>Funciona com controle de Xbox</span></div>
@@ -439,9 +439,9 @@
         <p class="lead" style="margin-top:18px">Não tem instalador complicado: é baixar, extrair e abrir.</p>
       </div>
       <div class="steps">
-        <div class="step reveal"><span class="n">1</span><h3>Baixe</h3><p>Clique em <strong>Baixar grátis</strong>. Vem o arquivo <code>Jogae.zip</code>.</p></div>
-        <div class="step reveal"><span class="n">2</span><h3>Extraia</h3><p>Botão direito no arquivo → <strong>Extrair tudo</strong>. Guarde a pasta onde quiser.</p></div>
-        <div class="step reveal"><span class="n">3</span><h3>Abra</h3><p>Abra o <code>Jogae.exe</code>. Dica: botão direito → Enviar para → Área de trabalho.</p></div>
+        <div class="step reveal"><span class="n">1</span><h3>Baixe</h3><p>Clique em <strong>Baixar grátis</strong>. Vem o arquivo <code>Jogae-Instalador.exe</code>.</p></div>
+        <div class="step reveal"><span class="n">2</span><h3>Instale</h3><p>Abra o instalador e clique em <strong>Avançar</strong> e <strong>Instalar</strong>. Não precisa ser administrador.</p></div>
+        <div class="step reveal"><span class="n">3</span><h3>Jogue</h3><p>Pronto: o Jogaê abre sozinho e fica com atalho na <strong>Área de Trabalho</strong> e no Menu Iniciar.</p></div>
       </div>
       <div class="smartscreen reveal">
         <div class="ss-title"><span class="i">i</span>
@@ -457,6 +457,8 @@
           <div class="btns"><span class="wb hl">Executar assim mesmo</span><span class="wb">Não executar</span></div></div>
       </div>
       <p style="margin-top:34px" class="reveal"><a class="btn btn-primary js-download" href="#"><span class="glyph">A</span>Baixar grátis para Windows</a></p>
+      <p class="reveal" style="margin-top:14px;color:var(--dim);font-size:14px">Prefere sem instalar? Baixe a
+        <a class="js-portable" href="#" style="color:var(--muted)">versão portátil (.zip)</a> e <strong>extraia a pasta inteira</strong> antes de abrir o <code>Jogae.exe</code>.</p>
     </div>
   </section>
 
@@ -533,8 +535,9 @@
 <script>
   // Configuração do site (repositório com os downloads)
   const JOGAE = { repo: "jogae-br/jogae" };
-  const url = `https://github.com/${JOGAE.repo}/releases/latest/download/Jogae.zip`;
+  const url = `https://github.com/${JOGAE.repo}/releases/latest/download/Jogae-Instalador.exe`;
   document.querySelectorAll(".js-download").forEach(a => a.href = url);
+  document.querySelectorAll(".js-portable").forEach(a => a.href = `https://github.com/${JOGAE.repo}/releases/latest/download/Jogae.zip`);
   fetch(`https://api.github.com/repos/${JOGAE.repo}/releases/latest`).then(r => r.ok ? r.json() : null).then(d => {
     if (!d || !d.tag_name) return;
     const v = d.tag_name.replace(/^v/i, "");
