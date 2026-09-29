@@ -641,6 +641,12 @@
   const url = `https://github.com/${JOGAE.repo}/releases/latest/download/Jogae-Instalador.exe`;
   document.querySelectorAll(".js-download").forEach(a => a.href = url);
   document.querySelectorAll(".js-portable").forEach(a => a.href = `https://github.com/${JOGAE.repo}/releases/latest/download/Jogae.zip`);
+
+  // Estatísticas (GoatCounter: sem cookies, sem dados pessoais) — conta também os cliques de download
+  const conta = (path, title) => { try { window.goatcounter && window.goatcounter.count({ path, title, event: true }); } catch (e) {} };
+  document.querySelectorAll(".js-download").forEach(a => a.addEventListener("click", () => conta("download-instalador", "Baixou o instalador")));
+  document.querySelectorAll(".js-portable").forEach(a => a.addEventListener("click", () => conta("download-portatil", "Baixou a versão portátil")));
+  document.querySelectorAll('a[href*="livepix"]').forEach(a => a.addEventListener("click", () => conta("apoio-livepix", "Abriu a página de apoio")));
   fetch(`https://api.github.com/repos/${JOGAE.repo}/releases/latest`).then(r => r.ok ? r.json() : null).then(d => {
     if (!d || !d.tag_name) return;
     const v = d.tag_name.replace(/^v/i, "");
@@ -667,5 +673,6 @@
                                       { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 </script>
+<script data-goatcounter="https://jogaebr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
