@@ -197,6 +197,31 @@
   @keyframes pulse { 50% { outline-color: rgba(255,200,61,.25); } }
   .arrow { font: 800 34px Saira, sans-serif; color: var(--gold); }
 
+
+  /* steam */
+  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 46px; }
+  .flow .step h3 { font-size: 20px; }
+  .who { display: inline-block; margin-bottom: 14px; padding: 4px 12px; border-radius: 999px; font: 800 12px Inter, sans-serif;
+         letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .notice { margin-top: 22px; padding: 22px 26px; border-radius: var(--radius); background: rgba(84,166,255,.08);
+            border: 1px solid rgba(84,166,255,.35); color: var(--muted); display: flex; gap: 16px; align-items: flex-start; }
+  .notice .i { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--sky);
+               color: var(--ink); font: 800 16px Saira, sans-serif; }
+  .notice strong { color: var(--text); }
+
+  /* controles recomendados */
+  .pads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  .pad { background: var(--night); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .pad h3 { font-size: 22px; margin: 6px 0 8px; }
+  .pad p { color: var(--muted); font-size: 15px; }
+  .pad .ex { margin-top: 12px; color: var(--dim); font-size: 14px; }
+  .pad .ex b { color: var(--text); font-weight: 600; }
+  .xin { display: inline-flex; align-items: center; gap: 8px; font: 800 12px Inter, sans-serif; letter-spacing: .06em;
+         text-transform: uppercase; color: var(--green); }
+  .xin::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .pad-tip { margin-top: 18px; color: var(--dim); font-size: 15px; }
+  .pad-tip strong { color: var(--muted); }
+
   /* perguntas */
   .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 44px; align-items: start; }
   details { background: var(--night); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; transition: border-color .2s; }
@@ -251,7 +276,8 @@
     .feature, .support { grid-template-columns: 1fr; gap: 44px; }
     .feature.flip > .media { order: 0; }
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .steps, .faq { grid-template-columns: 1fr; }
+    .steps, .faq, .pads { grid-template-columns: 1fr; }
+    .flow { grid-template-columns: 1fr 1fr; }
     .smartscreen { grid-template-columns: 1fr; }
     .arrow { transform: rotate(90deg); justify-self: center; }
     .support { padding: 34px 24px; justify-items: center; }
@@ -271,6 +297,7 @@
     .stat { padding: 22px 12px; }
     .btn { padding: 15px 20px; }
     .marquee img { width: 200px; }
+    .flow { grid-template-columns: 1fr; }
     .promo-shot img { aspect-ratio: 16 / 7; object-fit: cover; object-position: left center; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -287,6 +314,7 @@
   <div class="wrap nav">
     <a class="brand" href="#"><img src="img/logo.png" alt="" width="36" height="36"><span>Joga<b>ê</b></span></a>
     <nav class="links">
+      <a href="#steam">Steam</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#controle">Controle</a>
       <a href="#instalar">Instalar</a>
@@ -303,14 +331,15 @@
     <div class="wrap">
       <span class="pill"><span class="dot"></span>Grátis para Windows · <span class="js-version">versão 1.0.0</span></span>
       <h1>Seu PC não é lixo.<br><span class="grad">Ele roda muita coisa boa.</span></h1>
-      <p class="lead">O Jogaê analisa o seu computador e mostra só os jogos da Steam que <strong style="color:var(--text)">rodam nele</strong>.
-        Com cara de videogame: tela cheia, música e dá para jogar no controle.</p>
+      <p class="lead">O Jogaê analisa o seu computador e encontra, na <strong style="color:var(--text)">loja da Steam</strong>,
+        os jogos ideais para ele: só os que <strong style="color:var(--text)">rodam de verdade</strong>. Com cara de videogame:
+        tela cheia, trailers e dá para jogar no controle.</p>
       <div class="cta">
         <a class="btn btn-primary js-download" href="#instalar"><span class="glyph">A</span>
-          <span>Baixar grátis<span class="sub">Windows 10 e 11 · instalador de 27 MB</span></span></a>
+          <span>Baixar grátis<span class="sub">Windows 10 e 11 · instalador de 48 MB</span></span></a>
         <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
       </div>
-      <div class="trust"><span>Sem propaganda</span><span>Sem cadastro</span><span>Funciona com controle de Xbox</span></div>
+      <div class="trust"><span>Sem propaganda</span><span>Sem cadastro</span><span>Jogos comprados direto na Steam</span><span>Funciona com controle</span></div>
 
       <div class="stage reveal">
         <div class="chip chip-1"><span class="tag" style="background:var(--green)">RODA PERFEITAMENTE</span><span><strong>Hades</strong><small>no seu PC</small></span></div>
@@ -324,7 +353,7 @@
       </div>
 
       <div class="stats reveal">
-        <div class="stat"><b class="grad">1.500+</b><span>jogos analisados</span></div>
+        <div class="stat"><b class="grad">6.000</b><span>jogos da Steam analisados</span></div>
         <div class="stat"><b class="grad">4 GB</b><span>de memória já rodam centenas</span></div>
         <div class="stat"><b class="grad">100%</b><span>grátis, para sempre</span></div>
         <div class="stat"><b class="grad">0</b><span>propagandas</span></div>
@@ -342,6 +371,31 @@
     <div class="rail"><div class="marquee" id="row1"></div></div>
     <div class="rail"><div class="marquee rev" id="row2"></div></div>
   </div>
+
+  <!-- STEAM -->
+  <section id="steam">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow sky">Os jogos são da Steam</span>
+        <h2>O Jogaê não vende jogos. <span class="grad">Ele acha os certos para você.</span></h2>
+        <p class="lead" style="margin-top:18px">Todos os jogos que aparecem no Jogaê são da <strong style="color:var(--text)">Steam</strong>,
+          a maior loja de jogos de PC. O Jogaê faz a parte chata: confere, um por um, quais rodam na sua máquina.</p>
+      </div>
+      <div class="flow">
+        <div class="step reveal"><span class="n">1</span><span class="who" style="background:var(--green)">Jogaê</span>
+          <h3>Analisa o seu PC</h3><p>Processador, memória, placa de vídeo e resolução da tela. Tudo no seu computador.</p></div>
+        <div class="step reveal"><span class="n">2</span><span class="who" style="background:var(--green)">Jogaê</span>
+          <h3>Filtra a Steam</h3><p>Compara milhares de jogos da loja com o seu PC e mostra só os que rodam bem, com trailer e imagens.</p></div>
+        <div class="step reveal"><span class="n">3</span><span class="who" style="background:var(--sky)">Steam</span>
+          <h3>Você compra na Steam</h3><p>O botão Comprar abre a página do jogo na Steam. O pagamento é feito lá, na sua conta.</p></div>
+        <div class="step reveal"><span class="n">4</span><span class="who" style="background:var(--sky)">Steam</span>
+          <h3>O jogo é seu</h3><p>Fica na sua biblioteca da Steam para sempre. O Jogaê instala e abre para você, direto do controle.</p></div>
+      </div>
+      <div class="notice reveal"><span class="i">i</span>
+        <p><strong>O Jogaê é um guia gratuito e independente.</strong> Ele não vende jogos, não cobra comissão, não pede a
+          sua senha e não mexe na sua conta. Para comprar e jogar você usa a sua conta da Steam, que é gratuita.</p></div>
+    </div>
+  </section>
 
   <!-- RODA NO MEU PC -->
   <section id="como-funciona">
@@ -375,6 +429,8 @@
         <span><b>Lista de desejos</b> com aviso quando entrar em promoção</span>
         <span><b>Biblioteca</b> com seus jogos instalados</span>
         <span><b>Instale</b> e acompanhe o download pelo Jogaê</span>
+        <span><b>Trailers e imagens</b> de cada jogo, sem sair do app</span>
+        <span><b>Categorias</b>: metroidvania, roguelike, FPS, corrida, terror…</span>
       </div>
     </div>
   </section>
@@ -390,8 +446,8 @@
           <div><span class="key" style="background:var(--green)">A</span>Abrir o jogo e jogar</div>
           <div><span class="key" style="background:var(--coral)">B</span>Voltar</div>
           <div><span class="key" style="background:var(--gold)">Y</span>Lista de desejos</div>
-          <div><span class="key" style="background:var(--sky)">X</span>Buscar jogos novos e promoções</div>
-          <div><span class="key" style="background:var(--slate);color:var(--muted)">LB RB</span>Trocar de aba</div>
+          <div><span class="key" style="background:var(--sky)">X</span>Trailer em tela cheia</div>
+          <div><span class="key" style="background:var(--slate);color:var(--muted)">LB RB</span>Trocar de aba · ver vídeos e imagens do jogo</div>
         </div>
       </div>
       <div class="media reveal">
@@ -407,6 +463,32 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- QUAL CONTROLE -->
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow sky">Qual controle usar?</span>
+        <h2>Para a melhor experiência, <span class="grad">controle XInput</span></h2>
+        <p class="lead" style="margin-top:18px">XInput é o padrão dos controles de Xbox no Windows. É o que o Jogaê e a grande maioria
+          dos jogos da Steam entendem direto: liga e joga, com os botões no lugar certo, sem configurar nada.</p>
+      </div>
+      <div class="pads">
+        <div class="pad reveal"><span class="xin">XInput nativo</span><h3>Controle de Xbox</h3>
+          <p>O mais garantido. Os modelos de Xbox 360, One e Series funcionam com fio, adaptador ou Bluetooth.</p>
+          <p class="ex">Ex.: <b>Xbox Series</b>, <b>Xbox One</b>, <b>Xbox 360 com fio</b></p></div>
+        <div class="pad reveal"><span class="xin">Modo XInput</span><h3>8BitDo</h3>
+          <p>Ótimo acabamento e bom preço. Use no modo <strong style="color:var(--text)">X-input</strong> (letra X no controle ou na chave de modo).</p>
+          <p class="ex">Ex.: <b>Ultimate 2C</b>, <b>Ultimate</b>, <b>Pro 2</b>, <b>SN30 Pro</b></p></div>
+        <div class="pad reveal"><span class="xin">Modo XInput</span><h3>GameSir</h3>
+          <p>Custo-benefício forte, com vários modelos no Brasil. Use no modo <strong style="color:var(--text)">PC / X-input</strong>.</p>
+          <p class="ex">Ex.: <b>G7</b>, <b>T4 Kaleid</b>, <b>Nova Lite</b></p></div>
+      </div>
+      <p class="pad-tip reveal"><strong>Tem controle de PlayStation ou genérico?</strong> Muitos funcionam nos jogos pela Steam,
+        mas podem precisar de configuração e os botões podem vir trocados no Jogaê. Se o seu tiver a opção, escolha o modo
+        <strong>X-input</strong> (ou "Xbox"). O teclado também funciona.</p>
     </div>
   </section>
 
@@ -469,15 +551,20 @@
       <div class="faq reveal">
         <details><summary>O Jogaê é pago?</summary>
           <p>Não. É gratuito e vai continuar gratuito, sem propaganda. Quem quiser pode apoiar o projeto com uma doação.</p></details>
+        <details><summary>O Jogaê vende jogos?</summary>
+          <p>Não. Todos os jogos são da Steam. O Jogaê só encontra os ideais para o seu PC; a compra é feita na própria Steam,
+            na sua conta, e o jogo fica na sua biblioteca da Steam.</p></details>
         <details><summary>Preciso ter a Steam?</summary>
-          <p>Para ver o catálogo e as promoções, não. Para comprar, baixar e jogar, sim: os jogos são da Steam, que é gratuita.</p></details>
+          <p>Para ver o catálogo, os trailers e as promoções, não. Para comprar, baixar e jogar, sim: a Steam é gratuita e o Jogaê
+            instala e abre os jogos por ela.</p></details>
         <details><summary>É seguro? Ele mexe nos meus dados?</summary>
           <p>O Jogaê lê as peças do seu PC só no seu próprio computador. Ele consulta a loja da Steam e o SteamSpy para listar
             jogos e preços, e não envia seus dados pessoais para ninguém.</p></details>
         <details><summary>Qual o PC mínimo?</summary>
           <p>Windows 10 ou 11 (64 bits), 2 GB de memória e internet. O resto é justamente o que o Jogaê descobre: quais jogos o seu PC aguenta.</p></details>
         <details><summary>Funciona com controle?</summary>
-          <p>Sim. Controles de Xbox (360, One e Series) funcionam direto. O teclado também funciona.</p></details>
+          <p>Sim. Controles XInput funcionam direto: os de Xbox (360, One e Series) e os de marcas como 8BitDo e GameSir no modo
+            X-input. O teclado também funciona.</p></details>
         <details><summary>O Windows bloqueou o Jogaê. E agora?</summary>
           <p>Na tela azul, clique em <strong>Mais informações → Executar assim mesmo</strong>. Se o seu Windows estiver com o
             “Controle Inteligente de Aplicativos” ligado, ele pode bloquear programas novos sem essa opção.</p></details>
